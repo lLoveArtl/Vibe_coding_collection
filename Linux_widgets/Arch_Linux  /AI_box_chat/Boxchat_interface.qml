@@ -26,17 +26,17 @@ PanelWindow {
         fillMode: Image.Stretch 
     }
 
-    // --- 🌟 BỘ NHỚ GIAO DIỆN (LƯU TRỮ TẤT CẢ TIN NHẮN) 🌟 ---
+    // --- 🌟 memory appearance(help to the history chat always appear when using 🌟 ---
     ListModel { id: chatHistoryModel }
 
     QtObject {
         id: internal
         function parseMessage(msg) {
-            if (msg.startsWith("GEMINI_RESPONSE:")) {
+            if (msg.startsWith("CHATBOT_RESPONSE:")) {
                 var content = msg.substring(16);
-                // THÊM VÀO DANH SÁCH (Không phải ghi đè)
+                // add list 
                 chatHistoryModel.append({
-                    "sender": "Mèo",
+                    "sender": "Anynomous",
                     "message": content,
                     "isUser": false
                 });
@@ -53,7 +53,7 @@ PanelWindow {
 
     Rectangle {
         id: chatBox
-        // Tọa độ chuẩn của bạn
+        // standard x,y
         x: parent.width * 0.09
         y: parent.height * 0.52
         width: parent.width * 0.68
@@ -86,7 +86,7 @@ PanelWindow {
                     spacing: 10
                     interactive: true
                     
-                    // Template cho từng tin nhắn
+                    // Template for each chat
                     delegate: Rectangle {
                         width: chatListView.width * 0.92
                         height: msgText.implicitHeight + 20
@@ -124,7 +124,7 @@ PanelWindow {
                     anchors.margins: 5
                     background: null
                     color: "#BAC2DE"
-                    placeholderText: "Nhập lệnh meo~..."
+                    placeholderText: "Please type hear~..."
                     font.pointSize: 10
                     focus: true 
                     
