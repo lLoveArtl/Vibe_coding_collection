@@ -1,1 +1,2 @@
 #write your own timetable
+#this where AI read your timetabe
