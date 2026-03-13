@@ -7,7 +7,7 @@ from groq import Groq
 
 # --- essential for AI working, you can find API in console.groq.com/keys ---
 API_KEY = "your_API" 
-SOURCE_FILE = "your picture destination folder"
+SOURCE_FILE = "your txt file source for AI reading your timetable"
 
 client = Groq(api_key=API_KEY)
 
