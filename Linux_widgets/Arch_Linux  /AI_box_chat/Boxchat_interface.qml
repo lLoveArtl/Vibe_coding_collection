@@ -21,7 +21,7 @@ PanelWindow {
 
     Image {
         id: catImage
-        source: "your_picture"
+        source: "your picture file destination"
         anchors.fill: parent
         fillMode: Image.Stretch 
     }
